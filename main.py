@@ -6,7 +6,10 @@ def parallel_processing(n, m, data):
     # create the output pairs
     brivais = [0] * n
     for i in range(m):
-        nakamais = 1
+        nakamais = 0
+        for j in range(1, n):
+            if brivais[j] <= brivais[nakamais]:
+                nakamais = j
         laiks = brivais[nakamais]
         output.append((nakamais, laiks))
         brivais[nakamais] = brivais[nakamais] + data[i]
